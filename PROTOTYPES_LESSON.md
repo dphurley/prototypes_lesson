@@ -33,7 +33,7 @@ paintCart.forEach(function (paintColor) {
 ```
 ### Run it!
 ```javascript
-node paint_no_prototypes.js
+node no_prototypes.js
 ```
 
 ### IT WORKS! Now we add another...
