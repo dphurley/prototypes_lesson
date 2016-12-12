@@ -180,6 +180,27 @@ var firstPaintColor = new PaintColor(
 
 ### This color has all of the attributes of an In-Store color, but also has Vendor info
 
+### Create a new SpecialOrderPaintColor constructor
+```javascript
+function SpecialOrderOnlyPaintColor(name, type, gallons, quarts, vendorName) {
+	this.name = name;
+	this.type = type;
+	this.gallons = gallons;
+	this.quarts = quarts;
+	this.vendorName = vendorName;
+}
+```
+
+### We just typed a lot, and it looks like a lot of it is the same as PaintColor
+
+### SpecialOrderPaintColor really IS a PaintColor. It just has some additional info, too.
+
+### So let's use Inheritance
+
+```
+Inheritance is the idea that 
+```
+
 ### Create SpecialOrderPaintColor prototype that inherits from PaintColor
 
 - Type will always be SpecialOrder, so we can default the value without having to pass it in
@@ -216,3 +237,20 @@ cart.forEach(function (paintColor) {
 	console.log('---------------------------------');
 });
 ```
+
+----- 
+### SUMMARY
+
+### Benefits of using Prototypes:
+- We have a clean definition of what attributes a thing should have. If we use a constructor, we don't have to worry about forgetting attributes when creating multiple objects of the same type.
+- We can put functions directly on prototypes that are available anywhere we have an object of its type. (We can DRY our code up!)
+- We can use inheritance!
+
+### Benefits of inheritance:
+
+- IF we change the method definition of totalGallons() on PaintColor, it will change for all SpecialOrderPaintColors as well. We not only have once source of truth for how to do a complicated calculation.
+- Conversely, if we need to add a new field to SpecialOrderPaintColor, we only have to update those objects. 
+
+### Things to watch out for:
+- Remember! If you change a constructor, you will have to update everywhere you are using that constructor.
+- This might be overkill in some cases! Prototypes come with the overhead of having to maintain your constructor definition. If you don't need many objects of the same type OR your object is very simple, JSON objects can work just fine.
