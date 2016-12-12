@@ -1,4 +1,6 @@
-### We want to sell paint
+# We want to sell paint
+
+-----  
 
 ### NEW FILE - paint_no_prototypes.js
 
@@ -145,32 +147,34 @@ cart.forEach(function (paintColor) {
 });
 ```
 
-	### WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
+### WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
 
-	- Problem will be that the first color has 'undefined' quarts. 
-		- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
-		- (undefined * 0.25) = NaN
-		- ```1 + NaN = NaN```
+- Problem will be that the first color has 'undefined' quarts. 
+	- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
+	- (undefined * 0.25) = NaN
+	- ```1 + NaN = NaN```
 
-	- IMPORTANT - IF WE DO NOT SET AN ATTRIBUTE ON THE PROTOTYPE, IT WILL BE undefined
+- IMPORTANT - IF WE DO NOT SET AN ATTRIBUTE ON THE PROTOTYPE, IT WILL BE undefined
 
-	- Update first item to match new interface
-	```javascript
-	var firstPaintColor = new PaintColor(
-		"Ruby Red",
-		"Store", 
-		1, 
-		0
-	)
-	```
+- Update first item to match new interface
+```javascript
+var firstPaintColor = new PaintColor(
+	"Ruby Red",
+	"Store", 
+	1, 
+	0
+)
+```
 
-	- EVERYTHING SHOULD WORK NOW
+### EVERYTHING SHOULD WORK NOW
 
-- NOW WE HAVE A SPECIAL ORDER ONLY COLOR
+--------  
+  
+### NOW WE HAVE A SPECIAL ORDER ONLY COLOR
 
-- This color has all of the attributes of an In-Store color, but also has Vendor info
+### This color has all of the attributes of an In-Store color, but also has Vendor info
 
-- Create SpecialOrderPaintColor prototype that inherits from PaintColor
+### Create SpecialOrderPaintColor prototype that inherits from PaintColor
 
 	- Type will always be SpecialOrder, so we can default the value without having to pass it in
 	```javascript
@@ -181,7 +185,7 @@ cart.forEach(function (paintColor) {
 	SpecialOrderPaintColor.prototype = Object.create(PaintColor.prototype)
 	```
 
-- Add thirdPaintColor which is a SpecialOrderPaintColor
+### Add thirdPaintColor which is a SpecialOrderPaintColor
 ```javascript
 var thirdPaintColor = new SpecialOrderPaintColor(
 	"Rare Green",
@@ -192,7 +196,7 @@ var thirdPaintColor = new SpecialOrderPaintColor(
 cart.push(thirdPaintColor);
 ```
 
-- We can add some simple display logic to show attributes based on type now
+### We can add some simple display logic to show attributes based on type now
 ```javascript		
 console.log('CART:');
 cart.forEach(function (paintColor) {
