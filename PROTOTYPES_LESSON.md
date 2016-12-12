@@ -104,7 +104,7 @@ paintCart.forEach(function (paintColor) {
 });
 ```
 
-### Create secondPaintColor with quarts and add to cart
+### Create secondPaintColor - Except this one has quarts as well
 
 - Need to update the Constructor for new attribute 'quarts'
 ```javascript
