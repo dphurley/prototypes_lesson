@@ -1,7 +1,7 @@
 # We want to sell paint  
   
 
-### NEW FILE - paint_no_prototypes.js
+### NEW FILE - no_prototypes.js
 
 ### Build paint cart as empty array
 
