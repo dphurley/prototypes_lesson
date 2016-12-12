@@ -46,7 +46,7 @@ var secondPaintColor = {
 	'gallons': 3,
 	'quarts': 2
 };
-cart.push(secondPaintColor);
+paintCart.push(secondPaintColor);
 ```
 
 ### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for new color
@@ -88,14 +88,14 @@ var firstPaintColor = new PaintColor(
 	"StoreColor", 
 	1
 )
-cart.push(firstPaintColor);
+paintCart.push(firstPaintColor);
 ```
 
 ### DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
 
 ```javascript
 console.log('CART:');
-cart.forEach(function (paintColor) {
+paintCart.forEach(function (paintColor) {
 	console.log('-----------------------------');
 	console.log('Name: ' + paintColor.name);
 	console.log('Type: ' + paintColor.type);
@@ -124,7 +124,7 @@ var secondPaintColor = new PaintColor(
 	2, 
 	3
 )
-cart.push(secondPaintColor);
+paintCart.push(secondPaintColor);
 ```
 
 - 2 Gallons plus 3 Quarts is 2.75 gallons. We want to show that in the cart
@@ -138,7 +138,7 @@ function PaintColor(name, type, gallons, quarts) {
 	this.quarts = quarts;
 	this.totalGallons = function () {
 		return this.gallons + (this.quarts * 0.25);
-	}
+	}	
 }
 ```
 
