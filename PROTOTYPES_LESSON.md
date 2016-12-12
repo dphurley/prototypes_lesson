@@ -264,7 +264,7 @@ cart.forEach(function (paintColor) {
 - We can put functions directly on prototypes that are available anywhere we have an object of its type. (We can DRY our code up!)
 - We can use inheritance!
 
-### Benefits of inheritance:
+### Benefits of using inheritance:
 
 - IF we change the method definition of totalGallons() on PaintColor, it will change for all SpecialOrderPaintColors as well. We not only have once source of truth for how to do a complicated calculation.
 - Conversely, if we need to add a new field to SpecialOrderPaintColor, we only have to update those objects. 
