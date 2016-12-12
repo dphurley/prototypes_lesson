@@ -182,7 +182,7 @@ var firstPaintColor = new PaintColor(
 
 ### Create a new SpecialOrderPaintColor constructor
 ```javascript
-function SpecialOrderOnlyPaintColor(name, type, gallons, quarts, vendorName) {
+function SpecialOrderPaintColor(name, type, gallons, quarts, vendorName) {
 	this.name = name;
 	this.type = type;
 	this.gallons = gallons;
@@ -193,12 +193,30 @@ function SpecialOrderOnlyPaintColor(name, type, gallons, quarts, vendorName) {
 
 ### We just typed a lot, and it looks like a lot of it is the same as PaintColor
 
-### SpecialOrderPaintColor really IS a PaintColor. It just has some additional info, too.
+### First problem... Will the 'type' ever change? 
+
+### Nope, we can default that value. One less thing to pass in.
+```javascript
+function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
+	this.name = name;
+	this.type = 'SpecialOrder';
+	this.gallons = gallons;
+	this.quarts = quarts;
+	this.vendorName = vendorName;
+}
+```
+
+### SpecialOrderPaintColor really IS a PaintColor, though. It just has some additional info, too.
+### We've already built most of the same code we just typed in the PaintColor constructor, and it has a ```totalGallons()``` method that it would be nice to use for SpecialOrderPaintColors as well.
 
 ### So let's use Inheritance
 
-```
-Inheritance is the idea that 
+- Inheritance allows us to use all of the attributes of another object, without changing that object to fit a very specific use case.
+
+- Good examples of Inheritance:
+	- Person -> Employee : People have 'names', employees have 'names', employees are people. Employees also have a 'title', though, and not all people do. An Employee should be able to use the 'name' attribute from People without requiring all People to have a 'title.'
+	- Bear -> GrizzlyBear : A GrizzlyBear is a Bear, and as such it should be able to ```.roar()``` like a Bear.
+	
 ```
 
 ### Create SpecialOrderPaintColor prototype that inherits from PaintColor
@@ -254,3 +272,8 @@ cart.forEach(function (paintColor) {
 ### Things to watch out for:
 - Remember! If you change a constructor, you will have to update everywhere you are using that constructor.
 - This might be overkill in some cases! Prototypes come with the overhead of having to maintain your constructor definition. If you don't need many objects of the same type OR your object is very simple, JSON objects can work just fine.
+
+### Explore:
+- What would happen if we redefined ```this.totalGallons``` on SpecialOrderPaintColor to be a different ```function```?
+- What would happen if we defined ```this.name``` on SpecialOrderPaintColor after calling the PaintColor prototype?
+- Are there any elegant ways we could handle missing values within the constructor? What if we wanted quarts to default to 0 when no quart value is passed in.
