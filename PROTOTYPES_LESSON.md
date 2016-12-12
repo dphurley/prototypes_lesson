@@ -220,7 +220,7 @@ var thirdPaintColor = new SpecialOrderPaintColor(
 	1,
 	"Sherwin-Williams"
 )
-cart.push(thirdPaintColor);
+paintCart.push(thirdPaintColor);
 ```
 
 ### We can add some simple display logic to show attributes based on type now
