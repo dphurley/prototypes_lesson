@@ -13,7 +13,7 @@ var paintCart = [];
 ```javascript
 var firstPaintColor = {
 	'name': 'Ruby Red',
-	'type': 'StoreColor',
+	'type': 'InStore',
 	'gallons': 1
 };
 paintCart.push(firstPaintColor);
@@ -42,7 +42,7 @@ node no_prototypes.js
 ```javascript	
 var secondPaintColor = {
 	'name': 'Blue Velvet',
-	'type': 'StoreColor',
+	'type': 'InStore',
 	'gallons': 3,
 	'quarts': 2
 };
