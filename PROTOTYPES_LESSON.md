@@ -271,7 +271,7 @@ cart.forEach(function (paintColor) {
 
 ### Benefits of using inheritance:
 
-- IF we change the method definition of totalGallons() on PaintColor, it will change for all SpecialOrderPaintColors as well. We not only have once source of truth for how to do a complicated calculation.
+- IF we change the method definition of totalGallons() on PaintColor, it will change for all SpecialOrderPaintColors as well. We now only have one source of truth for how to do a complicated calculation.
 - Conversely, if we need to add a new field to SpecialOrderPaintColor, we only have to update those objects. 
 
 ### Things to watch out for:
