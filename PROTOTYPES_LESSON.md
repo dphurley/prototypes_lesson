@@ -159,10 +159,7 @@ cart.forEach(function (paintColor) {
 - ```(undefined * 0.25) = NaN```
 - ```1 + NaN = NaN```
 - THIS IS IMPORTANT! - IF WE DO NOT SET AN ATTRIBUTE ON A NEW INSTANCE OF A PROTOTYPE, IT WILL BE ```undefined```
-</details>
-  
-
-- Update first item to match new interface
+- For the sake of simplicity, for now we will update the first item to match our new interface
 ```javascript
 var firstPaintColor = new PaintColor(
 	"Ruby Red",
@@ -171,6 +168,9 @@ var firstPaintColor = new PaintColor(
 	0
 )
 ```
+
+</details>
+ 
 
 ### EVERYTHING SHOULD WORK NOW
 
