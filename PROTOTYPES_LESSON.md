@@ -2,43 +2,47 @@
 
 ### Build paint cart as empty array
 
-	```javascript
-	var paintCart = [];
-	```
+```javascript
+var paintCart = [];
+```
 
-- Built first Store PaintColor json object and push to cart
+### Built first Store PaintColor json object and push to cart
+```javascript
+var firstPaintColor = {
+	'name': 'Ruby Red',
+	'type': 'StoreColor',
+	'gallons': 1
+};
+cart.push(firstPaintColor);
+```
 
-	var firstPaintColor = {
-		'name': 'Ruby Red',
-		'type': 'StoreColor',
-		'gallons': 1
-	};
-	cart.push(firstPaintColor);
+### DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
+```javascript
 
-- DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
+console.log('CART:');
+cart.forEach(function (paintColor) {
+	console.log('-----------------------------');
+	console.log('Name: ' + paintColor.name);
+	console.log('Type: ' + paintColor.type);
+	console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
+	console.log('-----------------------------');
+});
+```
 
-	console.log('CART:');
-	cart.forEach(function (paintColor) {
-		console.log('-----------------------------');
-		console.log('Name: ' + paintColor.name);
-		console.log('Type: ' + paintColor.type);
-		console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
-		console.log('-----------------------------');
-	});
+### IT WORKS! Now we add another...
 
-- IT WORKS! Now we add another...
+### Build second Store PaintColor json object and add to cart
+```javascript	
+var secondPaintColor = {
+	'name': 'Blue Velvet',
+	'type': 'StoreColor',
+	'gallons': 3,
+	'quarts': 2
+};
+cart.push(secondPaintColor);
+```
 
-- Build second Store PaintColor json object and add to cart
-	
-	var secondPaintColor = {
-		'name': 'Blue Velvet',
-		'type': 'StoreColor',
-		'gallons': 3,
-		'quarts': 2
-	};
-	cart.push(secondPaintColor);
-
-- WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for new color
+### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for new color
 
 - Options: 
 	- Calculate total gallons before building the object
@@ -52,52 +56,54 @@
 
 - OR USE PROTOTYPES! WE WILL USE PROTOTYPES
 
-- NEW FILE
-- Build paint cart as empty array
-
-	var paintCart = [];
+### NEW FILE
+### Build paint cart as empty array
+```javascript
+var paintCart = [];
+```
 
 - Build PaintColor as a prototype with only name, type, and gallons
 
-	function PaintColor(name, type, gallons) {
-		this.name = name;
-		this.type = type;
-		this.gallons = gallons;
-	}
+function PaintColor(name, type, gallons) {
+	this.name = name;
+	this.type = type;
+	this.gallons = gallons;
+}
 
 - Create firstPaintColor and add to cart
 
-	var firstPaintColor = new PaintColor(
-		"Ruby Red",
-		"StoreColor", 
-		1
-	)
-	cart.push(firstPaintColor);
+var firstPaintColor = new PaintColor(
+	"Ruby Red",
+	"StoreColor", 
+	1
+)
+cart.push(firstPaintColor);
 
 - DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
 
-	console.log('CART:');
-	cart.forEach(function (paintColor) {
-		console.log('-----------------------------');
-		console.log('Name: ' + paintColor.name);
-		console.log('Type: ' + paintColor.type);
-		console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
-		console.log('-----------------------------');
-	});
+console.log('CART:');
+cart.forEach(function (paintColor) {
+	console.log('-----------------------------');
+	console.log('Name: ' + paintColor.name);
+	console.log('Type: ' + paintColor.type);
+	console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
+	console.log('-----------------------------');
+});
 
 - Create secondPaintColor with quarts and add to cart
 
 	- Need to update the Constructor for new attribute 'quarts'
-		
+	```javascript
 		function PaintColor(name, type, gallons, quarts) {
 			this.name = name;
 			this.type = type;
 			this.gallons = gallons;
 			this.quarts = quarts;
 		}
+	```
 
 	- Now create second paint color and add to cart
-
+	```javascript
 		var secondPaintColor = new PaintColor(
 			"Blue Velvet", 
 			"StoreColor",
@@ -105,46 +111,47 @@
 			3
 		)
 		cart.push(secondPaintColor);
+	```
 
 	- 2 Gallons plus 3 Quarts is 2.75 gallons. We want to show that in the cart
 
 	- Update Cart display and add totalGallons() fxn to prototype
 
-		function PaintColor(name, type, gallons, quarts) {
-			this.name = name;
-			this.type = type;
-			this.gallons = gallons;
-			this.quarts = quarts;
-			this.totalGallons = function () {
-				return this.gallons + (this.quarts * 0.25);
-			}
+	function PaintColor(name, type, gallons, quarts) {
+		this.name = name;
+		this.type = type;
+		this.gallons = gallons;
+		this.quarts = quarts;
+		this.totalGallons = function () {
+			return this.gallons + (this.quarts * 0.25);
 		}
+	}
 
-		cart.forEach(function (paintColor) {
-			console.log('---------------------------------');
-			console.log('Name: ' + paintColor.name);
-			console.log('Type: ' + paintColor.type);
-			console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
-			console.log('---------------------------------');
-		});
+	cart.forEach(function (paintColor) {
+		console.log('---------------------------------');
+		console.log('Name: ' + paintColor.name);
+		console.log('Type: ' + paintColor.type);
+		console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
+		console.log('---------------------------------');
+	});
 
 	- WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
 
 	- Problem will be that the first color has 'undefined' quarts. 
 		- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
 		- (undefined * 0.25) = NaN
-		- 1 + NaN = NaN
+		- ```1 + NaN = NaN```
 
 	- IMPORTANT - IF WE DO NOT SET AN ATTRIBUTE ON THE PROTOTYPE, IT WILL BE undefined
 
 	- Update first item to match new interface
 
-		var firstPaintColor = new PaintColor(
-			"Ruby Red",
-			"Store", 
-			1, 
-			0
-		)
+	var firstPaintColor = new PaintColor(
+		"Ruby Red",
+		"Store", 
+		1, 
+		0
+	)
 
 	- EVERYTHING SHOULD WORK NOW
 
