@@ -1,5 +1,6 @@
-# We want to sell paint  
+# Javascript Prototypes and Inheritance
 
+### We want to sell paint  
 ### Paint is a very complex thing to model, so...
 
 ### GOALS
