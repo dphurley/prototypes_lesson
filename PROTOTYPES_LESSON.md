@@ -1,5 +1,8 @@
 # We want to sell paint  
-  
+
+### GOALS
+- Walk through a real world problem one might encounter while using complex objects.
+- Demonstrate two good patterns for solving this problem in Javascript: Prototypes and Inheritance
 
 ### NEW FILE - no_prototypes.js
 
