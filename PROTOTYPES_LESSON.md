@@ -1,6 +1,5 @@
-# We want to sell paint
-
------  
+# We want to sell paint  
+  
 
 ### NEW FILE - paint_no_prototypes.js
 
@@ -59,6 +58,8 @@ cart.push(secondPaintColor);
 	  if the color has quarts
 
 - OR USE PROTOTYPES! WE WILL USE PROTOTYPES
+
+-----
 
 ### NEW FILE - with_prototypes.js
 
