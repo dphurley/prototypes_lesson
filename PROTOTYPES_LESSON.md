@@ -1,5 +1,7 @@
 ### We want to sell paint
 
+### NEW FILE - paint_no_prototypes.js
+
 ### Build paint cart as empty array
 
 ```javascript
@@ -56,31 +58,35 @@ cart.push(secondPaintColor);
 
 - OR USE PROTOTYPES! WE WILL USE PROTOTYPES
 
-### NEW FILE
+### NEW FILE - with_prototypes.js
+
 ### Build paint cart as empty array
 ```javascript
 var paintCart = [];
 ```
 
-- Build PaintColor as a prototype with only name, type, and gallons
-
+### Build PaintColor as a prototype with only name, type, and gallons
+```javascript
 function PaintColor(name, type, gallons) {
 	this.name = name;
 	this.type = type;
 	this.gallons = gallons;
 }
+```
 
-- Create firstPaintColor and add to cart
-
+### Create firstPaintColor and add to cart
+```javascript
 var firstPaintColor = new PaintColor(
 	"Ruby Red",
 	"StoreColor", 
 	1
 )
 cart.push(firstPaintColor);
+```
 
-- DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
+### DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
 
+```javascript
 console.log('CART:');
 cart.forEach(function (paintColor) {
 	console.log('-----------------------------');
@@ -89,53 +95,57 @@ cart.forEach(function (paintColor) {
 	console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
 	console.log('-----------------------------');
 });
+```
 
-- Create secondPaintColor with quarts and add to cart
+### Create secondPaintColor with quarts and add to cart
 
-	- Need to update the Constructor for new attribute 'quarts'
-	```javascript
-		function PaintColor(name, type, gallons, quarts) {
-			this.name = name;
-			this.type = type;
-			this.gallons = gallons;
-			this.quarts = quarts;
-		}
-	```
+- Need to update the Constructor for new attribute 'quarts'
+```javascript
+function PaintColor(name, type, gallons, quarts) {
+	this.name = name;
+	this.type = type;
+	this.gallons = gallons;
+	this.quarts = quarts;
+}
+```
 
-	- Now create second paint color and add to cart
-	```javascript
-		var secondPaintColor = new PaintColor(
-			"Blue Velvet", 
-			"StoreColor",
-			2, 
-			3
-		)
-		cart.push(secondPaintColor);
-	```
+- Now create second paint color and add to cart
+```javascript
+var secondPaintColor = new PaintColor(
+	"Blue Velvet", 
+	"StoreColor",
+	2, 
+	3
+)
+cart.push(secondPaintColor);
+```
 
-	- 2 Gallons plus 3 Quarts is 2.75 gallons. We want to show that in the cart
+- 2 Gallons plus 3 Quarts is 2.75 gallons. We want to show that in the cart
 
-	- Update Cart display and add totalGallons() fxn to prototype
-
-	function PaintColor(name, type, gallons, quarts) {
-		this.name = name;
-		this.type = type;
-		this.gallons = gallons;
-		this.quarts = quarts;
-		this.totalGallons = function () {
-			return this.gallons + (this.quarts * 0.25);
-		}
+- Update Cart display and add totalGallons() function to prototype
+```javascript
+function PaintColor(name, type, gallons, quarts) {
+	this.name = name;
+	this.type = type;
+	this.gallons = gallons;
+	this.quarts = quarts;
+	this.totalGallons = function () {
+		return this.gallons + (this.quarts * 0.25);
 	}
+}
+```
 
-	cart.forEach(function (paintColor) {
-		console.log('---------------------------------');
-		console.log('Name: ' + paintColor.name);
-		console.log('Type: ' + paintColor.type);
-		console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
-		console.log('---------------------------------');
-	});
+```javascript
+cart.forEach(function (paintColor) {
+	console.log('---------------------------------');
+	console.log('Name: ' + paintColor.name);
+	console.log('Type: ' + paintColor.type);
+	console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
+	console.log('---------------------------------');
+});
+```
 
-	- WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
+	### WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
 
 	- Problem will be that the first color has 'undefined' quarts. 
 		- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
@@ -145,13 +155,14 @@ cart.forEach(function (paintColor) {
 	- IMPORTANT - IF WE DO NOT SET AN ATTRIBUTE ON THE PROTOTYPE, IT WILL BE undefined
 
 	- Update first item to match new interface
-
+	```javascript
 	var firstPaintColor = new PaintColor(
 		"Ruby Red",
 		"Store", 
 		1, 
 		0
 	)
+	```
 
 	- EVERYTHING SHOULD WORK NOW
 
@@ -162,33 +173,36 @@ cart.forEach(function (paintColor) {
 - Create SpecialOrderPaintColor prototype that inherits from PaintColor
 
 	- Type will always be SpecialOrder, so we can default the value without having to pass it in
-
-		function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
-			PaintColor.call(this, name, "SpecialOrder", gallons, quarts);
-			this.vendorName = vendorName;
-		}
-		SpecialOrderPaintColor.prototype = Object.create(PaintColor.prototype)
+	```javascript
+	function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
+		PaintColor.call(this, name, "SpecialOrder", gallons, quarts);
+		this.vendorName = vendorName;
+	}
+	SpecialOrderPaintColor.prototype = Object.create(PaintColor.prototype)
+	```
 
 - Add thirdPaintColor which is a SpecialOrderPaintColor
-
-	var thirdPaintColor = new SpecialOrderPaintColor(
-		"Rare Green",
-		4,
-		1,
-		"Sherwin-Williams"
-	)
-	cart.push(thirdPaintColor);
+```javascript
+var thirdPaintColor = new SpecialOrderPaintColor(
+	"Rare Green",
+	4,
+	1,
+	"Sherwin-Williams"
+)
+cart.push(thirdPaintColor);
+```
 
 - We can add some simple display logic to show attributes based on type now
-		
-	console.log('CART:');
-	cart.forEach(function (paintColor) {
-		console.log('---------------------------------');
-		console.log('Name: ' + paintColor.name);
-		console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
-		console.log('Type: ' + paintColor.type);
-		if(paintColor.type === 'SpecialOrder') {
-			console.log('Vendor Name: ' + paintColor.vendorName);
-		}
-		console.log('---------------------------------');
-	});
+```javascript		
+console.log('CART:');
+cart.forEach(function (paintColor) {
+	console.log('---------------------------------');
+	console.log('Name: ' + paintColor.name);
+	console.log('Amount: ' + paintColor.totalGallons() + ' Gallon(s)');
+	console.log('Type: ' + paintColor.type);
+	if(paintColor.type === 'SpecialOrder') {
+		console.log('Vendor Name: ' + paintColor.vendorName);
+	}
+	console.log('---------------------------------');
+});
+```
