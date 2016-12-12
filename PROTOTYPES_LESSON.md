@@ -16,14 +16,14 @@ var firstPaintColor = {
 	'type': 'StoreColor',
 	'gallons': 1
 };
-cart.push(firstPaintColor);
+paintCart.push(firstPaintColor);
 ```
 
 ### DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
 ```javascript
 
 console.log('CART:');
-cart.forEach(function (paintColor) {
+paintCart.forEach(function (paintColor) {
 	console.log('-----------------------------');
 	console.log('Name: ' + paintColor.name);
 	console.log('Type: ' + paintColor.type);
