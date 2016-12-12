@@ -151,15 +151,16 @@ cart.forEach(function (paintColor) {
 	console.log('---------------------------------');
 });
 ```
-
 ### WE WILL HAVE A PROBLEM WHEN WE RUN THE CODE. WHO CAN TELL ME WHAT IT IS?
-
-- Problem will be that the first color has 'undefined' quarts. 
-	- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
-	- (undefined * 0.25) = NaN
-	- ```1 + NaN = NaN```
-
-- IMPORTANT - IF WE DO NOT SET AN ATTRIBUTE ON THE PROTOTYPE, IT WILL BE undefined
+<details> 
+<summary><strong>The problem is...</strong></summary>
+- The first color has 'undefined' quarts. We will need to set quarts for all PaintColors because we changed the definition. 
+- When we try to run totalGallons() for first line item, 1 + (undefined * 0.25)
+- ```(undefined * 0.25) = NaN```
+- ```1 + NaN = NaN```
+- THIS IS IMPORTANT! - IF WE DO NOT SET AN ATTRIBUTE ON A NEW INSTANCE OF A PROTOTYPE, IT WILL BE ```undefined```
+</details>
+  
 
 - Update first item to match new interface
 ```javascript
