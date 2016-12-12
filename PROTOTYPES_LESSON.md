@@ -220,9 +220,7 @@ function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
 
 - Good examples of Inheritance:
 	- Person -> Employee : People have 'names', employees have 'names', employees are people. Employees also have a 'title', though, and not all people do. An Employee should be able to use the 'name' attribute from People without requiring all People to have a 'title.'
-	- Bear -> GrizzlyBear : A GrizzlyBear is a Bear, and as such it should be able to ```.roar()``` like a Bear.
-	
-```
+	- Bear -> GrizzlyBear : A GrizzlyBear is a Bear, and as such it should be able to ```.roar()``` like a Bear
 
 ### Create SpecialOrderPaintColor prototype that inherits from PaintColor
 
