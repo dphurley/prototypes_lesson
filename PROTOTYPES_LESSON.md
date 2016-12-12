@@ -182,14 +182,14 @@ var firstPaintColor = new PaintColor(
 
 ### Create SpecialOrderPaintColor prototype that inherits from PaintColor
 
-	- Type will always be SpecialOrder, so we can default the value without having to pass it in
-	```javascript
-	function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
-		PaintColor.call(this, name, "SpecialOrder", gallons, quarts);
-		this.vendorName = vendorName;
-	}
-	SpecialOrderPaintColor.prototype = Object.create(PaintColor.prototype)
-	```
+- Type will always be SpecialOrder, so we can default the value without having to pass it in
+```javascript
+function SpecialOrderPaintColor(name, gallons, quarts, vendorName) {
+	PaintColor.call(this, name, "SpecialOrder", gallons, quarts);
+	this.vendorName = vendorName;
+}
+SpecialOrderPaintColor.prototype = Object.create(PaintColor.prototype)
+```
 
 ### Add thirdPaintColor which is a SpecialOrderPaintColor
 ```javascript
