@@ -1,0 +1,88 @@
+{
+  "favorites": [
+    {
+      "movie_title": "field of dreams",
+      "imdb_id": "12345"
+    },
+    {
+      "movie_title": "field of dreams",
+      "imdb_id": "12345"
+    },
+    {
+      "movie_title": "field of dreams",
+      "imdb_id": "12345"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "Star Wars: Episode V - The Empire Strikes Back",
+      "imdb_id": "tt0080684"
+    },
+    {
+      "movie_title": "Star Wars: Episode V - The Empire Strikes Back",
+      "imdb_id": "tt0080684"
+    },
+    {
+      "movie_title": "Star Wars: Episode VI - Return of the Jedi",
+      "imdb_id": "tt0086190"
+    },
+    {
+      "movie_title": "Star Wars: Episode IV - A New Hope",
+      "imdb_id": "tt0076759"
+    },
+    {
+      "movie_title": "The Hunger Games",
+      "imdb_id": "tt1392170"
+    },
+    {
+      "movie_title": "The Hunger Games: Catching Fire",
+      "imdb_id": "tt1951264"
+    },
+    {
+      "movie_title": "The Hunger Games: Mockingjay - Part 1",
+      "imdb_id": "tt1951265"
+    },
+    {
+      "movie_title": "Field of Dreams",
+      "imdb_id": "tt0097351"
+    },
+    {
+      "movie_title": "Field of Dreams",
+      "imdb_id": "tt0097351"
+    },
+    {
+      "movie_title": "Star Wars: Episode V - The Empire Strikes Back",
+      "imdb_id": "tt0080684"
+    },
+    {
+      "movie_title": "Star Wars: Episode VI - Return of the Jedi",
+      "imdb_id": "tt0086190"
+    },
+    {
+      "movie_title": "Star Wars: Episode VI - Return of the Jedi",
+      "imdb_id": "tt0086190"
+    },
+    {
+      "movie_title": "Star Wars: The Clone Wars",
+      "imdb_id": "tt1185834"
+    },
+    {
+      "movie_title": "Star Wars: The Clone Wars",
+      "imdb_id": "tt1185834"
+    },
+    {
+      "movie_title": "Star Wars: Clone Wars",
+      "imdb_id": "tt0361243"
+    }
+  ]
+}

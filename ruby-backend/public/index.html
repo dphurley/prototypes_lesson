@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<form>
+		  <input id="searchTerm" type="text" name="searchTerm" value="" style="width: 1200px;">
+		</form> 
+		<button onclick="OmdbService.searchForMovieByName()">Search</button>
+
+		<button onclick="FavoriteService.showFavorites()">Show Favorites</button>
+
+		<div id="favorites"></div>
+
+		<div id="searchResults" style="margin: 0 auto; padding: 140px;"></div>
+
+	</body>
+
+	<script type="text/javascript" src="javascripts/services/omdbService.js"></script>
+	<script type="text/javascript" src="javascripts/services/favoriteService.js"></script>
+
+</html>
