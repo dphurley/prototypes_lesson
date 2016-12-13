@@ -12,46 +12,30 @@
 
 ```javascript
 var paintCart = [];
-```
 
-### Built first Store PaintColor json object and push to cart
-```javascript
 var firstPaintColor = {
-	'name': 'Ruby Red',
-	'type': 'InStore',
-	'gallons': 1
+    'name': 'Ruby Red',
+    'type': 'InStore',
+    'gallons': 1
 };
 paintCart.push(firstPaintColor);
-```
 
-### DISPLAY THE CART - console.log name, type, gallons for each paint color in cart
-```javascript
+var secondPaintColor = {
+    'name': 'Blue Velvet',
+    'type': 'InStore',
+    'gallons': 3,
+    'quarts': 2
+};
+paintCart.push(secondPaintColor);
 
 console.log('CART:');
 paintCart.forEach(function (paintColor) {
-	console.log('-----------------------------');
-	console.log('Name: ' + paintColor.name);
-	console.log('Type: ' + paintColor.type);
-	console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
-	console.log('-----------------------------');
-});
-```
-### Run it!
-```javascript
-node no_prototypes.js
-```
-
-### IT WORKS! Now we add another...
-
-### Build second Store PaintColor json object and add to cart
-```javascript	
-var secondPaintColor = {
-	'name': 'Blue Velvet',
-	'type': 'InStore',
-	'gallons': 3,
-	'quarts': 2
-};
-paintCart.push(secondPaintColor);
+    console.log('-----------------------------');
+    console.log('Name: ' + paintColor.name);
+    console.log('Type: ' + paintColor.type);
+    console.log('Amount: ' + paintColor.gallons + ' Gallon(s)');
+    console.log('-----------------------------');
+});	
 ```
 
 ### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for new color
