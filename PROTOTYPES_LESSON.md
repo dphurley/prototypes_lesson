@@ -61,7 +61,7 @@ paintCart.forEach(function (paintColor) {
 var paintCart = [];
 ```
 
-### Build PaintColor as a prototype with only name, type, and gallons
+### Build PaintColor as a prototype with name, type, and gallons
 ```javascript
 function PaintColor(name, type, gallons) {
 	this.name = name;
