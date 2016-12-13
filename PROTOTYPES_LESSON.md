@@ -264,3 +264,4 @@ cart.forEach(function (paintColor) {
 - What would happen if we redefined ```this.totalGallons``` on SpecialOrderPaintColor to be a different ```function```?
 - What would happen if we defined ```this.name``` on SpecialOrderPaintColor after calling the PaintColor prototype?
 - Are there any elegant ways we could handle missing values within the constructor? What if we wanted quarts to default to 0 when no quart value is passed in.
+- When you call ```.toString()``` on an integer, where is that function defined?
