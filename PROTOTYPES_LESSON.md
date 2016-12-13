@@ -38,7 +38,7 @@ paintCart.forEach(function (paintColor) {
 });	
 ```
 
-### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for second color
+### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in from the second color
 
 - Options: 
 	- Calculate total gallons before building the object
