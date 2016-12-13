@@ -8,7 +8,7 @@
 
 ### NEW FILE - no_prototypes.js
 
-### Build paint cart as empty array
+### Build two Paint Colors and add both to the cart, then display the cart
 
 ```javascript
 var paintCart = [];
@@ -38,7 +38,7 @@ paintCart.forEach(function (paintColor) {
 });	
 ```
 
-### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for new color
+### WE HAVE A PROBLEM - We want to show total gallons but quarts are not factored in for second color
 
 - Options: 
 	- Calculate total gallons before building the object
